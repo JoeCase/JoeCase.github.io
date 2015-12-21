@@ -1,0 +1,79 @@
+/* CSS RESET*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  color: black;
+}
+
+
+/*Customized CSS*/
+
+body {
+  width: 800px;
+  margin: 100px auto 0px auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: Helvetica, sans-serif;
+  color: #353535;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+img {
+  width: 100%;
+}
+
+.icons {
+  float: left;
+}
+
+header {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.25em;
+  padding: 20px 0px 20px 0px;
+}
+
+nav a {
+  width: 20%;
+  color: 666666;
+  padding: 15px;
+}
+
+nav a:hover {
+  color: #d1d1d1;
+}
+
+footer {
+  text-align: center;
+}
+
+footer img {
+  width: 60px;
+  padding: 20px;
+}
+
+footer img:hover  {
+  opacity: 0.5;
+}

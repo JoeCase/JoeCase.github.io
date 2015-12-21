@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>The Position Parameter in CSS</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  </head>
+  <body>
+    <article>
+      <header>
+        <H2>The Position Parameter in CSS</H2>
+        <!-- <H3>Date Goes Here</H3> -->
+      </header>
+      <!-- <img src="#"> -->
+      <p>CSS layout can be a difficult thing to get a conceptual grasp on for people not familiar with it. It borrows concepts and terms from print design, web design and other graphic design disciplines. Floats and clears can be simple when used on just a couple of elements, but when a you are building a complex page or application with many elements, how all those elements interact with each other can become confusing and non intuitive to a newcomer. </p>
+
+      <p>The position parameter in CSS is another layer of complexity on top of things but you don&rsquo;t need to be scared of it. What you do need to remember is that for the most part it comes AFTER all the basic page flow parameters. This simply means, that once all the page flow is taken into account (floats, margins, divs, clears, etc), you use the position parameter to alter the position of an object away from where it would normally fall in the CSS page flow. You are essentially saying &ldquo;you would normally be right here, but I am going to POSITION you there instead.&rdquo; </p>
+
+      <p>I see the parameter being in two categories, while I would love to come up with a descriptive metaphorical name for them, it is difficult as the terms you would use to describe these things are used in the value names themselves. We can say &ldquo;Linked to Flow&rdquo; (static, relative, absolute) and &ldquo;Not linked to Flow&rdquo; (fixed). Even though I would like to use the word &ldquo;relative&rdquo; as each parameter is relative to something else, this would be confusing as relative is a parameter name. So erase all previous mentions of &ldquo;relative&rdquo; from your head before reading on. Also clear any previous associations you have of the terms relative, absolute, static and fixed. Because things are about to get weird and harboring pre-conceived notions about these things will make comprehension difficult. </p>
+
+      <p>Lets just get this one out of the way and not think about it:</p>
+
+      <p><strong>STATIC</strong>:This is the default behavior for any element. It is simply positioned according to the flow of the page. You have already been using this, you just didn&rsquo;t know it. Now it has a name. If an element is given property: static; it is immune from the top, bottom, left, right properties. But you don&rsquo;t even have to give it the property: static. It just has it. Why does this exist then? H1 has a margin property you don&rsquo;t see, but the browser sees it and computes accordingly. So every element automatically has this so the browser knows what to do with it. You may ask what use it is to use it then. Walk the path of a young Jedi and just know that it will all become clear with time, even though you may not understand it now. Also know that should the CSS shit hit the fan and things get haywire and and an element is doing something you don&rsquo;t understand, you have a &ldquo;position: static;&rdquo; property in your quiver to assassinate any top, bottom, right, left being dished out from the unseen cascade above.</p>
+
+      <p>Ok, now onto the ones you probably will use more knowingly&#8230;</p>
+
+      <p>Relative, fixed, absolute. </p>
+
+      <p>The one rule for the remaining three is this: Relative, fixed and absolute position an element RELATIVE to something else, it just differs what that something else is. </p>
+
+      <p>RELATIVE: Ok here is where the &ldquo;relative&rdquo; inception happens. The &ldquo;relative&rdquo; value simply means you are positioning an element RELATIVE TO ITSELF, meaning to where it would originally be in the page flow. So if after all the floats, clears, aligns, margins in your page placed an image in a certain location, you would use:</p>
+
+      <p><code>img { position: relative; top: 25px; right 25px}</code></p>
+
+      <p>&#8230;to position that image 25px down and 25px to the left of where it originally was because top, bottom, left and right are essentially placing margins on the object&#8230; from itself. Crazy, sorta. Basically an out of body experience, bot not out an out of &#60;body&#62; experience (forget that last joke if it made things confusing).</p>
+
+      <p>Also one thing to keep in mind&#8230; the rest of the page still thinks the object is in its original position. Like when in the movies the guy puts a mannequin in his bed so mom or the prison guard still things he is in it when they come by to check, yeah kinda like that. Even though the actual guy is positioned going down the drain pipe on his way out of the prison, the guard sees that he is still in his bed, so he can&rsquo;t put another prisoner in that bed, because it is already occupied. Likewise the browser and the rest of the elements on the page still think the object is in its original position, so nothing can take its place. An example: </p>
+      <p><code>&lt;body&gt;<br>
+  &lt;div-1&gt;<br>
+  &nbsp; &nbsp;&lt;div-2&gt;<br>
+  &nbsp; &nbsp; &nbsp; &lt;img src=&ldquo;myphoto.png&rdquo; alt=&ldquo;myphoto&gt;<br>
+  &nbsp; &nbsp;&lt;/div-2&gt;<br>
+  &lt;/div-1&gt;<br>
+  &lt;/body&gt;</code></p>
+
+      <p><code>img {<br>
+  position: absolute;<br>
+  left: 0;<br>
+  }</code></p>
+
+      <p>In this setup, the image would move up the divs, and then fix itself to the left of the &lt;body&gt; container, since neither of the divs took a stand with a position. If we added:</p>
+
+      <p><code>div-1 {<br>
+  position: relative;<br>
+  }</code></p>
+
+      <p>The image would now go through div-2 and fix itself to the left of the div-1 container.</p>
+
+      <p><strong>FIXED:</strong>FIXED: This value is at least named somewhat correctly. An element with position: fixed; is positioned RELATIVE TO THE VIEWPORT. This takes the element completely out of the flow of your page and affixes is to your browser window. Thus&#8230;</p>
+
+      <p><code>img {<br>
+  position: fixed;<br>
+  bottom: 0;<br>
+  left: 0;<br>
+  }</code></p>
+
+      <p>Would attach the image to the bottom left corner of your browser window NO MATTER WHAT. You can even scroll and it won&rsquo;t move. It is basically saying that it is too good for the page, it has moved on up to the browser and doesn&rsquo;t care at all what the page and all its rules and regulations are doing. Wherever the edges of the browser window goes, it goes. The page doesn&rsquo;t see it anymore either, and does not take it into account. It graduated. Better off for both of them it seems. </p>
+
+      <p>Hopefully this provides some multidimensional conceptual understanding to the position property in CSS and you can now use it to manipulate your layouts. It is a bit funky at first, but once it locks in, you will be seeing the CSS matrix (just wanted to add one more movie reference).</p>
+
+      <!-- <footer><p class="small">tag 1, tag 2, tag 3</p</footer> -->
+    </article>
+  </body>
+</html>

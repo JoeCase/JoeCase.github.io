@@ -28,13 +28,16 @@
 
       <p>The one rule for the remaining three is this: Relative, fixed and absolute position an element RELATIVE to something else, it just differs what that something else is. </p>
 
-      <p>RELATIVE: Ok here is where the &ldquo;relative&rdquo; inception happens. The &ldquo;relative&rdquo; value simply means you are positioning an element RELATIVE TO ITSELF, meaning to where it would originally be in the page flow. So if after all the floats, clears, aligns, margins in your page placed an image in a certain location, you would use:</p>
+      <p><strong>RELATIVE:</strong> Ok here is where the &ldquo;relative&rdquo; inception happens. The &ldquo;relative&rdquo; value simply means you are positioning an element RELATIVE TO ITSELF, meaning to where it would originally be in the page flow. So if after all the floats, clears, aligns, margins in your page placed an image in a certain location, you would use:</p>
 
       <p><code>img { position: relative; top: 25px; right 25px}</code></p>
 
       <p>&#8230;to position that image 25px down and 25px to the left of where it originally was because top, bottom, left and right are essentially placing margins on the object&#8230; from itself. Crazy, sorta. Basically an out of body experience, bot not out an out of &#60;body&#62; experience (forget that last joke if it made things confusing).</p>
 
-      <p>Also one thing to keep in mind&#8230; the rest of the page still thinks the object is in its original position. Like when in the movies the guy puts a mannequin in his bed so mom or the prison guard still things he is in it when they come by to check, yeah kinda like that. Even though the actual guy is positioned going down the drain pipe on his way out of the prison, the guard sees that he is still in his bed, so he can&rsquo;t put another prisoner in that bed, because it is already occupied. Likewise the browser and the rest of the elements on the page still think the object is in its original position, so nothing can take its place. An example: </p>
+      <p>Also one thing to keep in mind&#8230; the rest of the page still thinks the object is in its original position. Like when in the movies the guy puts a mannequin in his bed so mom or the prison guard still things he is in it when they come by to check, yeah kinda like that. Even though the actual guy is positioned going down the drain pipe on his way out of the prison, the guard sees that he is still in his bed, so he can&rsquo;t put another prisoner in that bed, because it is already occupied. Likewise the browser and the rest of the elements on the page still think the object is in its original position, so nothing can take its place.</p>
+
+      <p><strong>ABSOLUTE:</strong> This one is a little weird. Essentially something with this value is positioned RELATIVE TO ITS NEAREST POSITIONED ANCESTOR. A positioned ancestor means any element that has a value other than static (ah, static means something even though we thought it didn&rsquo;t). So this could be dad, grandma, or great grandpa. The element will keep going up the chain asking &ldquo;do you have a position?&rdquo; until it finds an ancestor who took a stand and positioned itself in some other way other than the default &ldquo;static.&rdquo; If it can&rsquo;t find one all the way up the tree, if its family is simply a go with the flow family, it will position itself relative to the body of the page. An example&#8230;</p>
+
       <p><code>&lt;body&gt;<br>
   &lt;div-1&gt;<br>
   &nbsp; &nbsp;&lt;div-2&gt;<br>

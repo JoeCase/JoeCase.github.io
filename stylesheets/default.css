@@ -17,7 +17,23 @@ h1, h2, h3, h4, h5, h6, p, a {
 body {
   width: 800px;
   margin: 100px auto 0px auto;
+}
 
+h1, h2, h3, h4, h5, h6, p {
+  font-family: Helvetica, sans-serif;
+  color: #353535;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 1.5em;
 }
 
 img {
@@ -47,12 +63,6 @@ nav a {
 
 nav a:hover {
   color: #d1d1d1;
-}
-
-h1 {
-  font-family: Helvetica, sans-serif;
-  font-size: 4em;
-  color: #353535;
 }
 
 footer {

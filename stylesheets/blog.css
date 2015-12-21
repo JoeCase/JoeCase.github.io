@@ -1,0 +1,22 @@
+article {
+  width: 600px;
+}
+
+header {
+  margin-bottom: 25px;
+}
+
+footer {
+  margin-top: 25px;
+}
+
+p {
+  font-family: "proxima-nova", Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+
+.small {
+  font-size: .8em;
+}

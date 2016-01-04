@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Page title goes here</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  </head>
+  <body>
+    <article>
+      <header>
+        <H2>Arrays and Hashes in Ruby</H2>
+        <!-- <H3>Date Goes Here</H3> -->
+      </header>
+      <p>The purposes of arrays and hashes in Ruby, and in just about any language, is to create a wrapper or package for pieces of data that are related to each other. This relation can be just about anything&hellip; your contact information, the heights of everyone in your family, the altitudes of all the mountains in colorado, the favorite pieces of your wardrobe, ratings on the top ten movies of the year&hellip; anything really. In essence, arrays and hashes are lists of data.&nbsp;</p>
+<p>So why do we have both? Well the two have a lot of similarities, and in many cases either one can be used, in fact I think you could probably wrangle either one to work for whatever use case, but don&rsquo;t quote me on that. Arrays work better for some tasks, hashes for others. But what&rsquo;s quite interesting and something you have to keep in mind, is that you can combine them. You can have an array full of hashes, or a hash full of arrays. Kind of a data ouroboros.</p>
+<p>Lets start with how they are them same</p>
+<p>Both arrays and hashes are ways of organizing pieces of data, or objects with a way of point to those data and objects. In essence both deal with key and value pairs. The value is the piece of data we are after, the key is what tells us where or why the data is there, it is how we access or reference it. In an array the key is always a number, from 0 to infinity. In a hash, the key can be anything, but conveniently it can be a descriptive string.&nbsp;</p>
+<p>I could say &ldquo;Detroit&rdquo;. Detroit is a piece of data, but how do we reference that? What does that mean? If it was in a list of all the cities in the US, you might say it is the tenth city in the list. But what else is it? It is the city where I am from. So Detroit is still Detroit, but we could point to it by saying its the 10th city in the list of all the cities in the US or we can say it is where Joe is from. Two ways of pointing or referencing the same piece of data, the same object. One is enumerable&hellip; it&rsquo;s 10th in a list, the other is more qualitative&hellip; Detroit is the city where Joe is from. So to locate or store &ldquo;Detroit in these two cases, it would be something like:</p>
+<p>Array:&nbsp; 10&mdash;&gt; Detroit</p>
+<p>Hash:&nbsp; &ldquo;hometown&rdquo;&mdash;&gt; Detroit</p>
+<p>So when do you use which? Well, arrays are great when you just need to collect a bunch of singular pieces of data. They don&rsquo;t necessarily need to be related to anything else. So you just wanted to collect all the cities in the US that have more than $200K in population. An array would be great.&nbsp;</p>
+<p><code>cities_200K_pop = [ &ldquo;New York&rdquo; , &ldquo;Dallas&rdquo; , &ldquo;Chicago&rdquo;, &ldquo;Detroit&rdquo; , &ldquo;Miami&rdquo; ]</code></p>
+<p>All we know is that all the cities in this list have a population larger than that, but that is the only significance. We can keep adding more to the list when we find them but the data is just gathered together under the subheading &ldquo;Cities with more than $200K people.&rdquo; If we wanted to access &ldquo;Detroit&rdquo; we would say:</p>
+<p><code>cities_200K_pop[3]</code></p>
+<p>Why 3? Because all arrays start with an index slot of 0 and then go up from there. So Detroit is the 4th spot in the array, which corresponds to an index of 3.</p>
+<p>On the other hand, if you wanted to make a list of cities that has some kind of meaning to something else, than a hash would be great. For instance, what if you wanted to make a list of the hometowns for all of your friends. If you just had those cities in an array, you wouldn&rsquo;t know who they belonged too. It would just be a list of cities. You could put them in an array and label it &ldquo;hometowns of all my friends&rdquo; but what if you wanted to know which city belonged to which person? A hash is the way to go. So now we would write:</p>
+<p><code>friends_hometowns = {
+&ldquo;John&rdquo;: &ldquo;New York&rdquo;,
+&ldquo;Sarah&rdquo;: &ldquo;Dallas&rdquo;,
+&ldquo;Rick&rdquo;: &ldquo;Chicago&rdquo;,
+&ldquo;Joe&rdquo;:&ldquo;Detroit&rdquo;,
+&ldquo;Katie&rdquo;:&ldquo;Miami&rdquo;
+}</code></p>
+<p>Now each of these pieces of data is directly related to another piece of data. There is no rank, just association. Now &ldquo;Detroit&rdquo; is necessarily linked to &ldquo;Joe&rdquo;.&nbsp;</p>
+<p>In the array, we could freely rearrange the objects without breaking their meaning, or we could actually move them around to give them meaning. For instance we could put &ldquo;Detroit&rdquo; in slot [1] and that wouldn&rsquo;t change the significance of anything.&nbsp; But in the hash, we can&rsquo;t put &ldquo;Detroit&rdquo; in the &ldquo;Sarah&rdquo; spot, because that is not true. The reason Detroit has meaning in the hash is because it is related to &ldquo;Joe&rdquo;.</p>
+<p>So hopefully that clears up why both arrays and hashes exist and just why you would want to use one over the other. While this doesn&rsquo;t get into the more technical ways in which each functions, it will allow you to understand and know when and why to use each one.&nbsp;</p>
+    </article>
+  </body>
+</html>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>The select method</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  </head>
+  <body>
+    <article>
+      <header>
+        <H2>The select method</H2>
+        <!-- <H3>Date Goes Here</H3> -->
+      </header>
+      <!-- <img src="#"> -->
+      <p>Select is a very efficient and great way to get a new array from an existing one. In effect it is a way to filter an array into a new one (it is like filter in javascript). I am sure you can already think of many ways to use this and probably have been looking for something just like this if you haven&rsquo;t already stumbled upon it.</p>
+
+      <p>In essence, select will pass in each element of an array, pass it through a block of code that you provide, and then push it to a new array that the method then returns. The uses of this are pretty endless as you can imagine. If you have an array of data and want to pull certain things out of it, without messing with the original array, then this is a great method. Lets check out some examples.</p>
+
+      <p><code>num_array = [ 1, 56, 498, 3, 2, 79, 5, 6, 7, 45]</code></p>
+
+      <p>What if we wanted to fine all the numbers in that array that are even and just work with those? Let&rsquo;s do this.</p>
+
+      <p><code>even_nums = num_array.select { |n| n % 2 == 0 } <br>
+
+p even_nums<br>
+p num_array<br>
+
+ => [56, 498, 2, 6]<br>
+ => [1, 56, 498, 3, 2, 79, 5, 6, 7, 45]</code></p>
+
+ <p>As you can see, we went through each element in the original array, and evaluated it on the condition <code>n % 2 == 0</code>. Each value that evaluated to true, was pushed to the new array, values evaluated to false did not. The original array was untouched. </p>
+
+<p>Lets see some string examples&#8230;</p>
+
+      <p><code>names_array = [ 'Sarah', 'Tom', 'Joe', 'Alex' , 'Anita', 'Maria', 'Ron']</code></p>
+
+      <p>Perhaps we want to find all the people with names that have only three letters.</p>
+
+      <p><code>short_names = names_array.select { |n| n.length == 3 }<br>
+
+p short_names<br>
+
+ => ["Tom", "Joe", "Ron"]</code></p>
+
+ <p>or people with names that start with the letter A ...</p>
+
+      <p><code>a_names = names_array.select { |n| n[0].downcase == 'a'}<br>
+
+p a_names<br>
+
+# => ["Alex", "Anita"]</code></p>
+
+<p>And all the while&#8230;</p>
+
+<p><code>p names_array<br>
+
+=> ["Sarah", "Tom", "Joe", "Alex", "Anita", "Maria", "Ron"]</code></p>
+
+<p>&#8230;the original array is untouched. </p>
+
+<p>So as you can see, select is a very efficient and simple way to get a new array by filtering an existing one based on any condition want to setup.</p>
+    </article>
+  </body>
+</html>
+

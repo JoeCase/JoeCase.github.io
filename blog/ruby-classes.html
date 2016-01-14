@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Ruby Classes</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  </head>
+  <body>
+    <article>
+      <header>
+        <H2>Ruby Classes</H2>
+        <!-- <H3>Date Goes Here</H3> -->
+      </header>
+      <!-- <img src="#"> -->
+      <p>Everything in Ruby is an object, an this is a great thing. The concept of an object can be a little abstract when dealing with a programing language, or computers in general, because when we think of an object, we usually think of something that we can see, touch and manipulate. And though we can&rsquo;t really see or touch a Ruby object, we can manipulate it like a real object and thinking of it as a physical object is a great way to understand what exactly is going on under the hood. </p>
+
+<p>When we look at objects in the real world, we notice that certain objects, they individually all belong together. Say lamps for example. We can see two lamps that are different in style and size and maybe even some functionality. But we know they are all lamps, because they share certain characteristics. All lamps turn on, all lamps turn off, all lamps need electricity and all lamps have a bulb that lights up a room. All lamps light. These shared characteristics make us know its a lamp and not a table. These shared characteristics are what let us know all the objects are related. This is what a class does in Ruby. It allows us to group objects that have shared characteristics. But what the most important thing it does is allow us to create as many objects from the same prototype as we want. A class can be thought of as a kind of blueprint or prototype. After we spawn the object that has all the basic shared characteristics we need, we can alter the children or instances, how we see fit. </p>
+
+<p>Lets take say we wanted to make a group of airplane objects. We know all bikes have certain characteristics that make them different from cars. For instance, planes can fly. Planes have wings. And planes all takeoff and land. There are a lot of things different kinds of planes don&rsquo;t share, such as color, type of engine and number of seats. If we wanted to make a bunch of planes, we would at least want to start with the most basic blueprint and then modify the special cases after that. Say we do this&#8230;</p>
+
+<code>class Plane<br />
+ attr_accessor :engine<br />
+ attr_accessor :wings
+<br />
+<br />
+def initialize<br />
+ @wings = 2<br />
+ @flight_status = :on_ground<br />
+ @engine = :jet<br />
+ end
+<br />
+<br />
+def takeoff<br />
+ @flight_status = :in_air<br />
+ end
+<br />
+<br />
+def land_it<br />
+ @flight_status = :on_ground<br />
+ end<br />
+end</code>
+<br />
+<br />
+
+<p>With this we can start out and see that each place will two wings, a status of on the ground, and whatever kind of engine we start it with. It will also have the ability to take off and land. We can make a couple planes:</p>
+
+<code>my_plane = Plane.new<br />
+your_plane = Plane.new</p></code>
+
+<p> We both start with a jet engine and two wings. A great place so start. From here we can modify our plane, but at least we start with the basics, that all planes share. I could change the number of wings on my plane like this:</p>
+
+<code>my_plane.wings = 4<br />
+p my_plane.wings<br />
+# => 4</code>
+<br /><br />
+
+<p>From here we can make our planes as custom as we want. But we still know they are planes, and we could make a hundred new planes pretty quickly and not have to build the wings and engine every time. </p>
+
+<p>So classes in Ruby are a great way to create a number of objects that share characteristics and behaviors.</p>
+    </article>
+  </body>
+</html>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>The select method</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  </head>
+  <body>
+    <article>
+      <header>
+        <H2>The select method</H2>
+        <!-- <H3>Date Goes Here</H3> -->
+      </header>
+      <!-- <img src="#"> -->
+      <p>Ruby and Javascript seem to be cousins. While Ruby is the more abbreviated and some might argue elegant language, javascript is the more verbose cousin, with maybe more horsepower. But that has yet to be seen from these early stages of getting to know both of them. </p>
+
+<p>One thing to look at in comparing these languages is how they handle basic data structures and how they are created. These are both object oriented languages and data structures are a key part of all of this. </p>
+
+<p>What we want to look at his how to create objects from a blueprint. This is where Ruby starts to shine with it&rsquo;s classes. In a hash literal or object literal, things are pretty straightforward. But when it comes to manufacturing objects, the Ruby class is a wonderful thing. A class in Ruby allows you to define and make many objects that not only share characteristics and behaviors, but can also share variables internally between them. </p>
+
+<p>Let&rsquo;s look at a javascript constructor function:</p>
+
+<p><code>function student(name, grade, age) {<br />
+ this.name = name,<br />
+ this.grade = grade,<br />
+ this.age = age,<br />
+ this.sayName = function() { console.log(&ldquo;Hello &ldquo; + this.name) }<br />
+}</code></p>
+
+<p>Now this is pretty cool. All we have to do is call student.new(), pass in the parameters and we have a new student object that we can assign to a variable. We can even have each one of those say it&rsquo;s own name, because a function can be a value in the object. </p>
+
+<p>But lets take a look at Ruby class. </p>
+
+<p><code>class student<br />
+ def initialize(name, grade, age)<br />
+ @name = name<br />
+ @grade = grade<br />
+ @age = age<br />
+ @@totalstudents = 1<br />
+ end<br />
+<br />
+ def say_name<br />
+ p &ldquo;Hello #{@name}, you are one of #{@@totalstudents}.&rdquo;<br />
+ end<br />
+end<br />
+</code></p>
+
+<p>Now what are this little @ symbols? Those signify instance variables and class variables. Why are those cool? Well the class variables can be used and accessed by any object in the class. Something a JS constructor function cannot do. So you can create a whole system of objects that talk internally to each other. A JS constructor function basically creates an island of an object, floating solo. A ruby class constructor can create a whole series of networked functions. And that is powerful.</p>
+    </article>
+  </body>
+</html>
+

@@ -90,3 +90,34 @@ footer img:hover  {
   margin-right: 20px;
 
 }
+
+/*ADD ON CLASSES*/
+
+.center {
+  margin: 0 auto 0 auto;
+}
+
+
+
+
+/*TABLES*/
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 20px 0px 20px 30px;
+  font-family: Helvetica, sans-serif;
+  color: #353535;
+  border: 0px;
+}
+
+tr:nth-child(odd) {
+    background-color: #e3e3e3;
+}
+
+td:nth-child(even) {
+    font-style: italic;
+    font-family: Times, serif;
+}

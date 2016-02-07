@@ -121,3 +121,16 @@ td:nth-child(even) {
     font-style: italic;
     font-family: Times, serif;
 }
+
+/*Lists*/
+
+li {
+  font-size: large;
+  text-align: center;
+  text-decoration: none;
+  line-height: 2em;
+}
+
+ul {
+  list-style-type: none;
+}
